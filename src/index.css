@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face{
+  font-family: 'Nueue';
+  src: url('/fonts/NeueMontreal-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'Grotesk';
+  src: url('/fonts/FoundersGrotesk-Semibold.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'icomoon';
+  src:url('/fonts/icomoon.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@layer utilities{
+  .profile-view{
+    @apply bg-zinc-900 border-[1px]  border-[#eee] p-4 flex flex-col absolute top-[5.4rem] text-white font-nueue rounded-3xl z-[100] right-[3.5rem] before:content-[''] before:absolute before:h-[20px] before:w-[20px] before:right-[1.8rem] before:rotate-45 before:bg-zinc-900 before:border-l-[1px] before:border-t-[1px] before:-top-[.65rem]
+  }
+}
