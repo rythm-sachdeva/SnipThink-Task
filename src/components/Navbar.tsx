@@ -1,6 +1,6 @@
 import { useRecoilState } from "recoil"
 import { ProfilePannelState } from "../recoil/profileatom/ProfileAtom"
-import { Profileview } from "../components/Profileview"
+import { Profileview } from "./Profileview"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { useRef, useState } from "react"
@@ -9,6 +9,13 @@ import { useRef, useState } from "react"
 
 
 const Navbar = () => {
+
+  const navlinks = [
+    {title:"Home",link:'/'},
+    {title:"About",link:'#'},
+    {title:"Contact",link:"#"},
+    {title:"Register",link:"#"}
+  ]
   const [profilePanel,setProfilePannel] = useRecoilState(ProfilePannelState)
   const profilepanelRef = useRef<HTMLDivElement>(null)
   const [menuOpen,setMenuOpen] = useState<boolean>(false)
@@ -69,8 +76,8 @@ const Navbar = () => {
         </div>
         
         <div  className={`nav-links w-full pt-4 md:pt-0 ${menuOpen ? 'flex ': 'hidden'} md:flex md:static md:gap-6    flex gap-3 flex-col md:flex-row md:justify-center font-nueue md:w-auto`}>
-         {['Home', 'About', 'Contact','Register'].map((link,index)=>(
-                <a href="#" key={index} className={`text-white text-xl py-2 md:hover:text-blue-500 hover:transition active:bg-zinc-800 w-full px-7 items-center rounded-lg hover:ease-in-out hover:duration-350 `}>{link}</a>
+         {navlinks.map((val,index)=>(
+                <a href={val.link} key={index} className={`text-white text-xl py-2 md:hover:text-blue-500 hover:transition active:bg-zinc-800 w-full px-7 items-center rounded-lg hover:ease-in-out hover:duration-350 `}>{val.title}</a>
          ))}
         </div>
         <div className="flex gap-7 opacity-0 md:opacity-[100%] ">

@@ -3,21 +3,20 @@ import { useNavigate } from "react-router-dom"
 const LandingPage = () => {
     // console.log(profilePanel)
    const navigate = useNavigate();
-   const Links = ['/bid-token-money-payment','','']
+   const Links = ['/bid-token-money-payment','/refund-to-buyer','nonrefund-to-buyer']
     
     return (
         <div className="bg-zinc-900 h-screen w-screen ">
-            <div className="p-40">
-            <div className="hero text-white uppercase text-8xl font-grotesk">
-                <h1>Trading Made</h1>
+            <div className="ml-9 md:m-0 mt-20 items-center md:justify-start md:items-start px-auto justify-center flex flex-col md:p-40">
+            <div className="hero text-white text-6xl uppercase md:text-8xl font-grotesk">
+                <h1>Bidding Made</h1>
             </div>
-            <div className="hero flex gap-7 align-baseline text-white uppercase text-8xl font-grotesk">
+            <div className="hero flex md:flex-row flex-col gap-7 align-baseline text-6xl text-white uppercase md:text-8xl font-grotesk">
                 <h1>Simple</h1>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 400 200"
-                    width="200"
-                    height="100"
+                    className="w-[100px] md:w-[200px]"
                     style={{
                         background: "linear-gradient(to right, #001f3f, #007bff)",
                         borderRadius: "10px",
@@ -66,8 +65,8 @@ const LandingPage = () => {
                 </svg>
             </div>
             </div>
-            <div className="border-t-[1px] pt-4 px-6 font-icomoon flex text-white justify-between w-screen border-zinc-400 ">
-             {['Open Dmat Account', 'Trade Now', 'Learn More'].map((item, index) => (
+            <div className="border-t-[1px] md:gap-0 flex-col gap-7 md:flex-row md:m-0 mt-5 pt-4 px-6 font-icomoon flex text-white justify-between w-screen border-zinc-400 ">
+             {['Bid Token Money', 'Refunds', 'Non-Refunds'].map((item, index) => (
                 <p key={index} onClick={()=>{navigate(Links[index])}} className="border-[1px] px-6 py-1 transition ease-in duration-300 hover:bg-blue-400 rounded-full">{item}</p>
              ))}
             </div>
