@@ -1,50 +1,54 @@
-# React + TypeScript + Vite
+# Payment Pages
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This document provides an overview of the functionality, structure, and routes for the payment-related pages in the application.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Pages and Routes
 
-## Expanding the ESLint configuration
+### 1. Landing Page
+- **Route**: `/`
+- **Description**: This is the homepage of the application, providing an overview and navigation to other sections.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 2. Bid Token Money Payment Page
+- **Route**: `/bid-token-money-payment`
+- **Description**: This page allows users to view bid details and proceed with token money payment.
 
-- Configure the top-level `parserOptions` property like this:
+### 3. Bid Balance Money Payment Page
+- **Route**: `/bid-balance-money-payment`
+- **Description**: This page allows users to view bid details and proceed with the balance money payment for a bid.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 4. Refund to Buyer Page
+- **Route**: `/refund-to-buyer`
+- **Description**: This page displays refund details and allows users to process refunds if applicable.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 5. Non-Refund to Buyer Page
+- **Route**: `/nonrefund-to-buyer`
+- **Description**: This page displays non-refund details and provides an option to contact support for assistance.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### 6. Payment History Page
+- **Route**: `/payment-history`
+- **Description**: This page lists the payment history for bids, including artwork details and transaction statuses. Users can download invoices for past transactions.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### 7. Not Found Page
+- **Route**: `*`
+- **Description**: A fallback page displayed when users navigate to an undefined route. It informs users that the requested page was not found and provides a link to return to the homepage.
+
+---
+
+## Usage Instructions
+1. **Navigation**:
+   - Use the header to access `Home`, `Cart`, or `Profile` pages at any time.
+   - Direct links to specific pages are provided based on their respective routes.
+2. **Making Payments**:
+   - Use the `Bid Token Money Payment Page` or `Bid Balance Money Payment Page` to complete payment-related actions.
+3. **Refunds**:
+   - Navigate to the `Refund to Buyer Page` for refund actions or to the `Non-Refund to Buyer Page` for support options if refunds are not applicable.
+4. **Payment History**:
+   - View the `Payment History Page` for past transactions and download invoices if needed.
+5. **Error Handling**:
+   - If a user navigates to an undefined route, the `Not Found Page` will be displayed.
+
+
+
