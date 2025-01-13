@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 const LandingPage = () => {
     // console.log(profilePanel)
    const navigate = useNavigate();
-   const Links = ['/bid-token-money-payment','/refund-to-buyer','nonrefund-to-buyer']
+   const Links = ['/bid-token-money-payment','/bid-balance-money-payment','nonrefund-to-buyer']
     
     return (
         <div className="bg-zinc-900 h-screen w-screen ">
@@ -66,8 +66,8 @@ const LandingPage = () => {
             </div>
             </div>
             <div className="border-t-[1px] md:gap-0 flex-col gap-7 md:flex-row md:m-0 mt-5 pt-4 px-6 font-icomoon flex text-white justify-between w-screen border-zinc-400 ">
-             {['Bid Token Money', 'Refunds', 'Non-Refunds'].map((item, index) => (
-                <p key={index} onClick={()=>{navigate(Links[index])}} className="border-[1px] px-6 py-1 transition ease-in duration-300 hover:bg-blue-400 rounded-full">{item}</p>
+             {['Bid Token Money', 'Bid Balance Money', 'Non-Refunds'].map((item, index) => (
+                <p key={index} onClick={()=>{navigate(Links[index])}} className="border-[1px] cursor-pointer px-6 py-1 transition ease-in duration-300 active:bg-blue-400 hover:bg-blue-400 rounded-full">{item}</p>
              ))}
             </div>
             

@@ -1,8 +1,8 @@
-const BidTokenMoneyPayment = () => {
+const BidTokenMoneyPayment = ({title}:{title:string}) => {
   return (
     <div className="h-screen w-screen flex flex-col">
       <div className="pt-[6rem]  md:pt-[8rem] px-5 flex flex-col gap-5">
-        <h1 className="text-white text-2xl md:text-3xl font-bold font-nueue">Bid Token Money Payment</h1>
+        <h1 className="text-white text-2xl md:text-3xl font-bold font-nueue">{title}</h1>
         <div className="flex flex-col lg:flex-row gap-5">
           {/* Left Card */}
           <div className="Card1 p-5  w-full lg:w-1/2 rounded-lg bg-zinc-800 shadow-md shadow-zinc-600 border-[#eee]">
